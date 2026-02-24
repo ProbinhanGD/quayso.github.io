@@ -93,7 +93,7 @@ function spin() {
     resultDiv.innerText = "Chờ tí";
     button.disabled = true;
 
-    fetch("https://quayso-github-io.onrender.com", {
+fetch("/send", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -126,4 +126,5 @@ function spin() {
 </script>
 
 </body>
+
 </html>
