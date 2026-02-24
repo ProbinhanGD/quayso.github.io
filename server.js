@@ -6,6 +6,11 @@ const fs = require("fs");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
 
 const DATA_FILE = "users.json";
 
@@ -61,3 +66,4 @@ app.listen(PORT, () => {
     console.log("Server running on port " + PORT);
 
 });
+
