@@ -39,10 +39,10 @@ app.post("/send", async (req, res) => {
     // Gửi mail
     let transporter = nodemailer.createTransport({
         service: "gmail",
-        auth: {
-            user: "mosfet115405@gmail.com",
-            pass: "zzerxyvzfclvuwex"
-        }
+auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+}
     });
 
     await transporter.sendMail({
@@ -59,4 +59,5 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log("Server running on port " + PORT);
+
 });
